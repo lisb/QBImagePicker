@@ -20,6 +20,8 @@
 
 - (BOOL)qb_imagePickerController:(QBImagePickerController *)imagePickerController shouldSelectAsset:(ALAsset *)asset;
 
+- (void)qb_imagePickerController:(QBImagePickerController *)imagePickerController didLongPressAsset:(ALAsset *)asset;
+
 @end
 
 typedef NS_ENUM(NSUInteger, QBImagePickerControllerFilterType) {
