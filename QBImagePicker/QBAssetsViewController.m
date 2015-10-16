@@ -54,7 +54,7 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
 
 @end
 
-@interface QBAssetsViewController () <PHPhotoLibraryChangeObserver, UICollectionViewDelegateFlowLayout>
+@interface QBAssetsViewController () <PHPhotoLibraryChangeObserver, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *doneButton;
 
@@ -76,6 +76,8 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
     
     [self setUpToolbarItems];
     [self resetCachedAssets];
+    
+    [self addLongPressGesture];
     
     // Register observer
     [[PHPhotoLibrary sharedPhotoLibrary] registerChangeObserver:self];
@@ -659,6 +661,40 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
     CGFloat width = (CGRectGetWidth(self.view.frame) - 2.0 * (numberOfColumns - 1)) / numberOfColumns;
     
     return CGSizeMake(width, width);
+}
+
+
+#pragma mark - Long Press Support http://stackoverflow.com/a/18848817
+
+- (void)addLongPressGesture
+{
+    // attach long press gesture to collectionView
+    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
+                                          initWithTarget:self action:@selector(handleLongPress:)];
+    lpgr.minimumPressDuration = .5; //seconds
+    lpgr.delegate = self;
+    lpgr.delaysTouchesBegan = YES;
+    [self.collectionView addGestureRecognizer:lpgr];
+}
+
+-(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state != UIGestureRecognizerStateBegan) {
+        return;
+    }
+    CGPoint p = [gestureRecognizer locationInView:self.collectionView];
+    
+    NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:p];
+    if (indexPath == nil){
+        NSLog(@"couldn't find index path");
+        return;
+    }
+    
+    // get the asset at indexPath (the one you long pressed)
+    PHAsset *asset = self.fetchResult[indexPath.item];
+    if ([self.imagePickerController.delegate respondsToSelector:@selector(qb_imagePickerController:didLongPressAsset:)]) {
+        [self.imagePickerController.delegate qb_imagePickerController:self.imagePickerController didLongPressAsset:asset];
+    }
 }
 
 @end

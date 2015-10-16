@@ -77,4 +77,10 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
+- (void)qb_imagePickerController:(QBImagePickerController *)imagePickerController didLongPressAsset:(PHAsset *)asset
+{
+    NSLog(@"Long pressed asset:");
+    NSLog(@"%@", asset);
+}
+
 @end
