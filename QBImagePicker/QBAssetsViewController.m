@@ -79,7 +79,18 @@
     // Scroll to bottom
     if (self.numberOfAssets > 0 && self.isMovingToParentViewController && !self.disableScrollToBottom) {
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:(self.numberOfAssets - 1) inSection:0];
-        [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionTop animated:NO];
+        self.indexPathForLastVisibleItem = indexPath;
+    }
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    // http://stackoverflow.com/a/20084341
+    if (self.indexPathForLastVisibleItem) {
+        [self.collectionView scrollToItemAtIndexPath:self.indexPathForLastVisibleItem
+                                    atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
+        self.indexPathForLastVisibleItem = nil;
     }
 }
 
