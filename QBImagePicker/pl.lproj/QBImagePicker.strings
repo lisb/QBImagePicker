@@ -17,5 +17,5 @@
 "assets.footer.photo-and-videos" = "%ld zdjęcie, %ld wideo";
 "assets.footer.photos-and-videos" = "Zdjęć: %ld, %ld wideo";
 
-"assets.toolbar.item-selected" = "%ld zaznaczona rzecz";
-"assets.toolbar.items-selected" = "Zaznaczonych rzeczy: %ld";
+"assets.toolbar.item-selected" = "%ld/%ld zaznaczona rzecz";
+"assets.toolbar.items-selected" = "Zaznaczonych rzeczy: %ld/%ld";

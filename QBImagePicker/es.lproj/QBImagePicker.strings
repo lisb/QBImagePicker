@@ -17,5 +17,5 @@
 "assets.footer.photo-and-videos" = "%ld Foto, %ld Videos";
 "assets.footer.photos-and-videos" = "%ld Fotos, %ld Videos";
 
-"assets.toolbar.item-selected" = "%ld items seleccionados";
-"assets.toolbar.items-selected" = "%ld items seleccionados";
+"assets.toolbar.item-selected" = "%ld/%ld items seleccionados";
+"assets.toolbar.items-selected" = "%ld/%ld items seleccionados";
