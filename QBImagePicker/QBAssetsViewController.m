@@ -100,6 +100,7 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
     } else {
         [self.navigationItem setRightBarButtonItem:nil animated:NO];
     }
+    self.navigationController.toolbar.barTintColor = self.imagePickerController.barTintColor;
     
     [self updateDoneButtonState];
     [self updateSelectionInfo];
