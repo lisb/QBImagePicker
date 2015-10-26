@@ -17,5 +17,5 @@
 "format_photo_and_videos" = "共%ld 张照片, %ld 个视频";
 "format_photos_and_videos" = "共%ld 张照片, %ld 个视频";
 
-"item_selected" = "选择了%ld项";
-"items_selected" = "选择了%ld项";
+"item_selected" = "选择了%ld/%ld项";
+"items_selected" = "选择了%ld/%ld项";

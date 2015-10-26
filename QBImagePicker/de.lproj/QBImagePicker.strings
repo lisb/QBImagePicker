@@ -17,5 +17,5 @@
 "format_photo_and_videos" = "%ld Foto, %ld Videos";
 "format_photos_and_videos" = "%ld Fotos, %ld Videos";
 
-"item_selected" = "%ld Element ausgewählt";
-"items_selected" = "%ld Elemente ausgewählt";
+"item_selected" = "%ld/%ld Element ausgewählt";
+"items_selected" = "%ld/%ld Elemente ausgewählt";
