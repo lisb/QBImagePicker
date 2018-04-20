@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B8E80D62089E71E0006617D /* CustomNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B8E80D42089E71E0006617D /* CustomNavigationController.h */; };
+		2B8E80D72089E71E0006617D /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8E80D52089E71E0006617D /* CustomNavigationController.m */; };
 		790A850F1AE7D4D9008E2A80 /* QBSlomoIconView.h in Headers */ = {isa = PBXBuildFile; fileRef = 790A850D1AE7D4D9008E2A80 /* QBSlomoIconView.h */; };
 		790A85101AE7D4D9008E2A80 /* QBSlomoIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 790A850E1AE7D4D9008E2A80 /* QBSlomoIconView.m */; };
 		AA3AD06F1ACF9A3A00BF523E /* QBVideoIconView.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3AD06D1ACF9A3A00BF523E /* QBVideoIconView.h */; };
@@ -81,6 +83,8 @@
 
 /* Begin PBXFileReference section */
 		07A50A481B331A840010E048 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/QBImagePicker.strings; sourceTree = "<group>"; };
+		2B8E80D42089E71E0006617D /* CustomNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomNavigationController.h; sourceTree = "<group>"; };
+		2B8E80D52089E71E0006617D /* CustomNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationController.m; sourceTree = "<group>"; };
 		74BB93661B2CE91A0044EB60 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/QBImagePicker.strings; sourceTree = "<group>"; };
 		790A850D1AE7D4D9008E2A80 /* QBSlomoIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBSlomoIconView.h; sourceTree = "<group>"; };
 		790A850E1AE7D4D9008E2A80 /* QBSlomoIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBSlomoIconView.m; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 				AAA8FE5A1ACDA554002A9710 /* QBAlbumsViewController.m */,
 				AAF1CA2D1ACE6E46005F6295 /* QBAssetsViewController.h */,
 				AAF1CA2E1ACE6E46005F6295 /* QBAssetsViewController.m */,
+				2B8E80D42089E71E0006617D /* CustomNavigationController.h */,
+				2B8E80D52089E71E0006617D /* CustomNavigationController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -323,6 +329,7 @@
 				AAF1CA1A1ACE5467005F6295 /* QBAlbumCell.h in Headers */,
 				AAA8FE5B1ACDA554002A9710 /* QBAlbumsViewController.h in Headers */,
 				AA3AD06F1ACF9A3A00BF523E /* QBVideoIconView.h in Headers */,
+				2B8E80D62089E71E0006617D /* CustomNavigationController.h in Headers */,
 				AAA8FE091ACDA079002A9710 /* QBImagePicker.h in Headers */,
 				AABBF0901ACEDDFF003188A3 /* QBCheckmarkView.h in Headers */,
 				AAA8FE211ACDA090002A9710 /* QBImagePickerController.h in Headers */,
@@ -497,6 +504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAF1CA341ACE6FB5005F6295 /* QBAssetCell.m in Sources */,
+				2B8E80D72089E71E0006617D /* CustomNavigationController.m in Sources */,
 				AA3AD0701ACF9A3A00BF523E /* QBVideoIconView.m in Sources */,
 				790A85101AE7D4D9008E2A80 /* QBSlomoIconView.m in Sources */,
 				AABBF0911ACEDDFF003188A3 /* QBCheckmarkView.m in Sources */,

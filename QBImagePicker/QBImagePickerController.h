@@ -47,6 +47,7 @@ typedef NS_ENUM(NSUInteger, QBImagePickerMediaType) {
 @property (nonatomic, copy) NSString *prompt;
 @property (nonatomic, assign) BOOL showsNumberOfSelectedAssets;
 @property (nonatomic, strong) UIColor *barTintColor;
+@property (nonatomic) UIStatusBarStyle statusBarStyle;
 
 @property (nonatomic, assign) NSUInteger numberOfColumnsInPortrait;
 @property (nonatomic, assign) NSUInteger numberOfColumnsInLandscape;

@@ -11,10 +11,11 @@
 
 // ViewControllers
 #import "QBAlbumsViewController.h"
+#import "CustomNavigationController.h"
 
 @interface QBImagePickerController ()
 
-@property (nonatomic, strong) UINavigationController *albumsNavigationController;
+@property (nonatomic, strong) CustomNavigationController *albumsNavigationController;
 
 @property (nonatomic, strong) NSBundle *assetBundle;
 
@@ -38,6 +39,7 @@
         self.minimumNumberOfSelection = 1;
         self.numberOfColumnsInPortrait = 4;
         self.numberOfColumnsInLandscape = 7;
+        self.statusBarStyle = UIStatusBarStyleDefault;
         
         _selectedAssets = [NSMutableOrderedSet orderedSet];
         
@@ -62,7 +64,8 @@
 {
     // Add QBAlbumsViewController as a child
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"QBImagePicker" bundle:self.assetBundle];
-    UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"QBAlbumsNavigationController"];
+    CustomNavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"QBAlbumsNavigationController"];
+    navigationController.statusBarStyle = self.statusBarStyle;
     
     [self addChildViewController:navigationController];
     
@@ -72,6 +75,16 @@
     [navigationController didMoveToParentViewController:self];
     
     self.albumsNavigationController = navigationController;
+}
+
+- (void)setStatusBarStyle:(UIStatusBarStyle)statusBarStyle {
+    _statusBarStyle = statusBarStyle;
+    [self setNeedsStatusBarAppearanceUpdate];
+    self.albumsNavigationController.statusBarStyle = statusBarStyle;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return self.statusBarStyle;
 }
 
 @end
