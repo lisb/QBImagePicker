@@ -45,7 +45,10 @@
         
         // Get asset bundle
         self.assetBundle = [NSBundle bundleForClass:[self class]];
-        NSString *bundlePath = [self.assetBundle pathForResource:@"QBImagePicker" ofType:@"bundle"];
+        NSString *bundlePath = [self.assetBundle pathForResource:@"QBImagePicker_QBImagePickerController" ofType:@"bundle"];
+        if (bundlePath == nil) {
+            bundlePath = [self.assetBundle pathForResource:@"QBImagePicker" ofType:@"bundle"];
+        }
         if (bundlePath) {
             self.assetBundle = [NSBundle bundleWithPath:bundlePath];
         }
