@@ -654,7 +654,7 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSUInteger numberOfColumns;
-    if (UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation])) {
+    if ([self isInterfacePortrait]) {
         numberOfColumns = self.imagePickerController.numberOfColumnsInPortrait;
     } else {
         numberOfColumns = self.imagePickerController.numberOfColumnsInLandscape;
@@ -663,6 +663,21 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
     CGFloat width = (CGRectGetWidth(self.view.frame) - 2.0 * (numberOfColumns - 1)) / numberOfColumns;
     
     return CGSizeMake(width, width);
+}
+
+- (BOOL)isInterfacePortrait
+{
+    // UIApplication.statusBarOrientation returns UIInterfaceOrientationUnknown on iOS 27,
+    // so use the orientation of the window scene instead.
+    if (@available(iOS 13.0, *)) {
+        UIInterfaceOrientation orientation = self.view.window.windowScene.interfaceOrientation;
+        if (orientation != UIInterfaceOrientationUnknown) {
+            return UIInterfaceOrientationIsPortrait(orientation);
+        }
+    }
+    
+    CGSize size = self.view.bounds.size;
+    return size.height >= size.width;
 }
 
 
